@@ -78,7 +78,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("\nCode:");
     println!("  use hyperliquid_sdk_rs::types::actions::PerpDeployRegisterAsset;");
-    println!("");
+    println!();
     println!("  let asset = PerpDeployRegisterAsset {{");
     println!("      dex: 1,");
     println!("      max_gas: \"1000000\".to_string(),");
@@ -110,17 +110,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n--- Part 3: Oracle Configuration ---\n");
 
     println!("Oracles are crucial for perpetual contracts:");
-    println!("");
+    println!();
     println!("1. ORACLE PRICE");
     println!("   - Used for funding rate calculations");
     println!("   - Should reflect spot/index price");
     println!("   - Must be updated regularly");
-    println!("");
+    println!();
     println!("2. MARK PRICE");
     println!("   - Used for margin calculations");
     println!("   - Used for liquidation triggers");
     println!("   - Dampened to prevent manipulation");
-    println!("");
+    println!();
     println!("3. EXTERNAL PERP PRICES");
     println!("   - Optional: prices from external perp markets");
     println!("   - Used for cross-market arbitrage protection");
@@ -142,17 +142,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n--- Part 4: Margin Configuration ---\n");
 
     println!("Perpetual contracts support different margin modes:");
-    println!("");
+    println!();
     println!("1. CROSS MARGIN (only_isolated = false)");
     println!("   - Shared margin across all positions");
     println!("   - More capital efficient");
     println!("   - Risk of cascading liquidations");
-    println!("");
+    println!();
     println!("2. ISOLATED MARGIN (only_isolated = true)");
     println!("   - Separate margin per position");
     println!("   - Limited loss to allocated margin");
     println!("   - Less capital efficient");
-    println!("");
+    println!();
     println!("For new perps, consider starting with only_isolated = true");
     println!("for safer trading until the market matures.");
 
@@ -170,7 +170,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("\nEnable DEX abstraction for your agent:");
     println!("  exchange.agent_enable_dex_abstraction().await");
-    println!("");
+    println!();
     println!("This allows your agent to interact with DEX-specific features.");
 
     // ==================== Part 6: Deployment Best Practices ====================
@@ -182,23 +182,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("   - Have redundant data sources");
     println!("   - Implement circuit breakers");
     println!("   - Update prices frequently (every block if possible)");
-    println!("");
+    println!();
     println!("2. INITIAL PARAMETERS");
     println!("   - Start with conservative margin requirements");
     println!("   - Use isolated margin initially");
     println!("   - Set reasonable position limits");
-    println!("");
+    println!();
     println!("3. LIQUIDITY");
     println!("   - Ensure sufficient market maker participation");
     println!("   - Consider incentives for liquidity providers");
     println!("   - Monitor order book depth");
-    println!("");
+    println!();
     println!("4. MONITORING");
     println!("   - Watch funding rates");
     println!("   - Monitor open interest");
     println!("   - Track liquidation events");
     println!("   - Alert on oracle deviations");
-    println!("");
+    println!();
     println!("5. RISK MANAGEMENT");
     println!("   - Implement position limits");
     println!("   - Have emergency pause capability");
@@ -214,13 +214,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("  [ ] Price feeds verified");
     println!("  [ ] Margin parameters calculated");
     println!("  [ ] Market maker commitments secured");
-    println!("");
+    println!();
     println!("Deployment:");
     println!("  [ ] Register perpetual asset");
     println!("  [ ] Set initial oracle prices");
     println!("  [ ] Verify asset appears in meta");
     println!("  [ ] Test with small positions");
-    println!("");
+    println!();
     println!("Post-deployment:");
     println!("  [ ] Oracle update automation running");
     println!("  [ ] Monitoring dashboards live");
@@ -231,16 +231,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("\n=== Perp Deployment Example Complete ===\n");
     println!("Key APIs for perpetual deployment:");
-    println!("");
+    println!();
     println!("Deployment:");
     println!("  - perp_deploy_register_asset(dex, gas, coin, decimals, oracle, ...)");
     println!("  - perp_deploy_set_oracle(dex, oracle_pxs, mark_pxs, external)");
-    println!("");
+    println!();
     println!("Query APIs:");
     println!("  - perp_dexs() - List available DEXs");
     println!("  - perp_deploy_auction_status() - Check auction status");
     println!("  - user_dex_abstraction(user) - Check DEX abstraction");
-    println!("");
+    println!();
     println!("DEX Management:");
     println!("  - agent_enable_dex_abstraction() - Enable DEX features");
 

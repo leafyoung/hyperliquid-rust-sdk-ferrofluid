@@ -133,7 +133,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n--- Part 4: Querying Tracked Orders ---\n");
 
     println!("Available query methods:");
-    println!("");
+    println!();
 
     println!("1. Get a specific order by CLOID:");
     println!("   let order = exchange.get_tracked_order(&cloid);");
@@ -165,7 +165,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n--- Part 5: Order Status Lifecycle ---\n");
 
     println!("Orders go through these states:");
-    println!("");
+    println!();
     println!("  Pending    -> Order created, not yet sent to exchange");
     println!("      |");
     println!("      v");
@@ -173,9 +173,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("      |");
     println!("      v");
     println!("  (Exchange manages the rest: open, filled, cancelled)");
-    println!("");
+    println!();
     println!("  OR");
-    println!("");
+    println!();
     println!("  Pending");
     println!("      |");
     println!("      v");
@@ -216,7 +216,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("```");
     println!("let cloid = Uuid::new_v4();");
     println!("exchange.place_order_with_cloid(order, cloid).await?;");
-    println!("");
+    println!();
     println!("// Later, check status");
     println!("if let Some(tracked) = exchange.get_tracked_order(&cloid) {{");
     println!("    match &tracked.status {{");
@@ -248,11 +248,11 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Key APIs:");
     println!("  Setup:");
     println!("    - ExchangeProvider::testnet(signer).with_order_tracking()");
-    println!("");
+    println!();
     println!("  Submission:");
     println!("    - place_order(&order) - auto-generates CLOID if tracking enabled");
     println!("    - place_order_with_cloid(order, cloid) - use specific CLOID");
-    println!("");
+    println!();
     println!("  Queries:");
     println!("    - get_tracked_order(&cloid) -> Option<TrackedOrder>");
     println!("    - get_all_tracked_orders() -> Vec<TrackedOrder>");
@@ -260,7 +260,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("    - get_submitted_orders() -> Vec<TrackedOrder>");
     println!("    - get_failed_orders() -> Vec<TrackedOrder>");
     println!("    - tracked_order_count() -> usize");
-    println!("");
+    println!();
     println!("  Cleanup:");
     println!("    - clear_tracked_orders()");
 

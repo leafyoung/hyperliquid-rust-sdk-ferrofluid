@@ -183,7 +183,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\n[Demo mode - not executing actual registration]");
     println!("To register as a validator, call:");
     println!("  use hyperliquid_sdk_rs::types::actions::CValidatorRegister;");
-    println!("");
+    println!();
     println!("  let registration = CValidatorRegister {{");
     println!("      node_ip: \"192.168.1.1\".to_string(),");
     println!("      name: \"My Validator\".to_string(),");
@@ -202,7 +202,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Update validator profile:");
     println!("  use hyperliquid_sdk_rs::types::actions::CValidatorChangeProfile;");
-    println!("");
+    println!();
     println!("  let update = CValidatorChangeProfile {{");
     println!("      node_ip: Some(\"new_ip\".to_string()),");
     println!("      name: Some(\"New Name\".to_string()),");
@@ -248,13 +248,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("\n=== Staking & Delegation Example Complete ===\n");
     println!("Key APIs demonstrated:");
-    println!("");
+    println!();
     println!("Info (Query) APIs:");
     println!("  - delegator_summary(user) - Overall staking status");
     println!("  - delegations(user) - Active delegations");
     println!("  - delegator_rewards(user) - Reward history");
     println!("  - delegator_history(user) - Full staking history");
-    println!("");
+    println!();
     println!("Exchange (Action) APIs:");
     println!("  - token_delegate(validator, wei, is_undelegate)");
     println!("  - c_validator_register(...) - Register as validator");

@@ -61,7 +61,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("\nOrderBuilder created successfully!");
 
     // Example 3: Create bulk orders with mixed tracking
-    let orders_with_ids = vec![
+    let orders_with_ids = [
         (
             OrderRequest::limit(0, true, "44900.0", "0.01", TIF_GTC),
             Some(Uuid::new_v4()),
@@ -160,7 +160,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("      60,       // duration in minutes");
     println!("      true      // randomize execution timing");
     println!("  ).await");
-    println!("");
+    println!();
     println!("  // Cancel a TWAP order");
     println!("  exchange.twap_cancel(0, twap_id).await");
 
@@ -169,7 +169,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("  let signer1: Address = \"0x...\".parse()?;");
     println!("  let signer2: Address = \"0x...\".parse()?;");
     println!("  let signer3: Address = \"0x...\".parse()?;");
-    println!("");
+    println!();
     println!("  // Convert to multi-sig requiring 2 of 3 signers");
     println!("  exchange.convert_to_multi_sig_user(");
     println!("      vec![(signer1, 1), (signer2, 1), (signer3, 1)],");
@@ -318,7 +318,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("      \"1000000000000000000\",  // wei");
     println!("      false                      // is_undelegate = false means delegate");
     println!("  ).await");
-    println!("");
+    println!();
     println!("  // Undelegate tokens from validator");
     println!("  exchange.token_delegate(");
     println!("      validator,");

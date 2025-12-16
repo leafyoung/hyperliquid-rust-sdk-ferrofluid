@@ -176,14 +176,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("    \"amount\": \"1000.0\",");
     println!("    \"time\": current_timestamp");
     println!("}});");
-    println!("");
+    println!();
     println!("// 2. Each signer signs the action hash");
     println!("// (This happens off-chain, typically via a UI or script)");
     println!("let signatures = vec![");
     println!("    (r1, s1, v1),  // Signer 1's signature");
     println!("    (r2, s2, v2),  // Signer 2's signature");
     println!("];");
-    println!("");
+    println!();
     println!("// 3. One signer submits the multi-sig transaction");
     println!("exchange.multi_sig(");
     println!("    multi_sig_address,");
